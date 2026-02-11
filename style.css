@@ -1,0 +1,131 @@
+:root {
+    --cursor-x: 50%;
+    --cursor-y: 50%;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.room {
+    background-color: #e5e5f7;
+    background-size: 10px 10px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+#flashlight {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 100;
+    background: radial-gradient(
+        circle 150px at var(--cursor-x) var(--cursor-y),
+        rgba(250, 107, 107, 0.2) 0%, 
+        rgba(0, 0, 0, 1) 90%
+    ), 
+    url('public/room.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+}
+
+.handwritten {
+    font-family: 'Indie Flower', cursive;
+    font-size: 12rem;
+    color: #444;
+    margin-bottom: 0;
+    text-shadow: var(--shadow-x) var(--shadow-y) 5px rgba(0, 0, 0, 0.2);
+    transition: text-shadow 0.1s ease-out;
+}
+
+.instruction {
+    font-size: 1.2rem;
+    color: #888;
+    font-style: italic;
+    text-align: center;
+}
+
+body.dark-mode .room { background: #000; }
+
+body.dark-mode #flashlight { display: block; }
+
+body.dark-mode .light-only { display: none; }
+
+.dark-text {
+    display: none;
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+body.dark-mode .dark-text { display: block; }
+
+.chain-container {
+    position: absolute;
+    top: -145px;
+    left: 50%;
+    transform-origin: top center;
+    cursor: pointer;
+    z-index: 101;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+@keyframes swing {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  20% { transform: translateX(-50%) rotate(15deg); }
+  40% { transform: translateX(-50%) rotate(-10deg); }
+  60% { transform: translateX(-50%) rotate(5deg); }
+  100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+.swing-animation {
+    animation: swing 0.8s ease-out;
+    transform-origin: top center;
+}
+
+.string { 
+    width: 2px;
+    height: 250px;
+    background: #777;
+    margin: 0 auto;
+}
+
+.handle { 
+    width: 20px;
+    height: 40px;
+    background: #333;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .handwritten {
+        font-size: 2.5rem;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    #flashlight {
+        background: radial-gradient(
+            circle 110px at var(--cursor-x) var(--cursor-y),
+            rgba(250, 107, 107, 0.2) 0%, 
+            rgba(0, 0, 0, 1) 90%
+        ),
+        url('public/room.jpg');
+        background-position: center center;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+}
