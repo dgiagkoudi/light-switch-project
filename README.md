@@ -25,8 +25,7 @@ An interactive light switch simulation built with Vanilla JavaScript, featuring 
 1. Clone repository
 
 ```bash
-git clone https://github.com/your-username/light-switch-project.git
-
+git clone https://github.com/dgiagkoudi/light-switch-project.git
 cd light-switch-project
 ```
 
@@ -61,3 +60,7 @@ Optimized for:
 - Customizable flashlight size
 - Ambient background animations
 - Accessibility improvements
+
+## Licence
+
+This project is licensed under the MIT License.
