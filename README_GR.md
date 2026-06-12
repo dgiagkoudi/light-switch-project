@@ -23,8 +23,7 @@
 1. Clone repository
 
 ```bash
-git clone https://github.com/your-username/light-switch-project.git
-
+git clone https://github.com/dgiagkoudi/light-switch-project.git
 cd light-switch-project
 ```
 
@@ -58,3 +57,7 @@ cd light-switch-project
 - Προσαρμογή μεγέθους φακού
 - Ambient background animations
 - Βελτιώσεις accessibility
+
+## License
+
+Το project διατίθεται με άδεια MIT License.
